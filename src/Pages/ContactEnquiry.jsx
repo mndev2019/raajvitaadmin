@@ -8,8 +8,8 @@ import { toast } from 'react-toastify'
 import { Base_Url } from '../API/Base_Url'
 
 const ContactEnquiry = () => {
-    const [data , setdata] = useState([]);
-     const fetchcontact = async () => {
+    const [data, setdata] = useState([]);
+    const fetchcontact = async () => {
         try {
             const resp = await axios.get(`${Base_Url}/contact-enquiry`)
             if (resp.data.success) {
@@ -29,7 +29,7 @@ const ContactEnquiry = () => {
         fetchcontact()
     }, [])
 
-     const handleDelete = async (id) => {
+    const handleDelete = async (id) => {
         try {
             const resp = await axios.delete(`${Base_Url}/contact-enquiry/${id}`);
 
@@ -44,36 +44,7 @@ const ContactEnquiry = () => {
             toast.error("Delete failed");
         }
     };
-     const exportCSV = () => {
-        const headers = [
-            "Name",
-            "Email",
-            "Mobile",
-            "Message",
-           
-        ];
-
-        const rows = data.map(item => [
-            item.name,
-            item.email,
-            item.mobile,
-            item.message,
-        
-        ]);
-
-        let csvContent =
-            headers.join(",") +
-            "\n" +
-            rows.map(row => row.join(",")).join("\n");
-
-        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "customers.csv";
-        link.click();
-    };
+  
 
     return (
         <>
@@ -81,15 +52,10 @@ const ContactEnquiry = () => {
             <section className="py-4 px-4">
                 <div className="container mx-auto">
                     <div className='flex justify-between'>
-                         <SectionTitle title="Contact" />
-                      <button
-                        onClick={exportCSV}
-                        className="bg-[#4a0909] text-xs uppercase text-white px-5 rounded py-1"
-                    >
-                        Export CSV
-                    </button>
-                        </div>
-                   
+                        <SectionTitle title="Contact" />
+                     
+                    </div>
+
 
                     <div className="pt-6 overflow-x-auto">
                         <table className="w-full border-separate border-spacing-y-2">
