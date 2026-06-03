@@ -43,7 +43,7 @@ function Login() {
       localStorage.setItem("token", response.data.token);
 
       // Redirect
-      navigate('/');
+      navigate('/contact');
 
     } catch (error) {
 

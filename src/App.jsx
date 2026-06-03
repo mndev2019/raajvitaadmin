@@ -1,5 +1,5 @@
 
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Layout from './Layout/Layout'
 import { ToastContainer } from 'react-toastify'
@@ -13,10 +13,10 @@ function App() {
   const ThemeRoutes = createBrowserRouter(
     createRoutesFromElements(
       <>
-        {/* <Route path='/' element={<Navigate to="/login" replace />} /> */}
+        <Route path='/' element={<Navigate to="/login" replace />} />
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Layout />}>
-          <Route path='/' element={<ContactEnquiry />} />
+          <Route path='/contact' element={<ContactEnquiry />} />
           <Route path='/project' element={<Project/>}/>
         
 

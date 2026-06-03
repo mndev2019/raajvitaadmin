@@ -27,9 +27,9 @@ const Sidebar = () => {
 
                 <ul className="*:py-1 px-3 *:text-sm *:font-light *:text-primary">
                     <li>
-                        <Link to={'/'} className='w-full  py-2  text-start block  text-white'>
+                        <Link to={'/contact'} className='w-full  py-2  text-start block  text-white'>
                             <div className="w-full flex gap-2 items-center">
-                                <div className={`h-[40px] w-[40px] flex justify-center items-center ${location.pathname === "/contact-enquiry" ? "text-secondary" : ""}`}>
+                                <div className={`h-[40px] w-[40px] flex justify-center items-center ${location.pathname === "/contact" ? "text-secondary" : ""}`}>
                                     <img src={contact} className="h-[30px]" />
 
                                 </div>
